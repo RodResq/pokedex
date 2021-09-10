@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PokeapiService} from '../../services/pokeapi.service';
 
 @Component({
   selector: 'app-list',
@@ -7,18 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  searchFilter: string = '';
   selectedPkm: null;
 
-  pokemonList = [
-    {name: 'Bulbasaur', number: 1},
-    {name: 'Chamander', number: 4},
-    {name: 'Squirtle', number: 7},
-    {name: 'Pikachu', number: 25},
-  ];
-
-  constructor() { }
+  constructor(private pokeapi: PokeapiService) { }
 
   ngOnInit(): void {
+  }
+
+  get pokemonList() {
+    return this.pokeapi.getPokeList().filter(pokemon => pokemon.name.toLowerCase().indexOf(this.searchFilter.toLowerCase()) != -1);
   }
 
   get pkmSprite() {
