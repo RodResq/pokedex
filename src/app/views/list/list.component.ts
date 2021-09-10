@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PokeapiService} from '../../services/pokeapi.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-list',
@@ -14,6 +15,7 @@ export class ListComponent implements OnInit {
   constructor(private pokeapi: PokeapiService) { }
 
   ngOnInit(): void {
+    this.pokeapi.listAll();
   }
 
   get pokemonList() {

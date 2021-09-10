@@ -1,21 +1,50 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+
+interface PokelistResponse {
+  count: number;
+  next: string;
+  previous: string;
+  results: Pokemon[]
+}
+
+interface Pokemon {
+  name: string;
+  number: number;
+  url: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokeapiService {
 
-  pokeList = [
-    {name: 'Bulbasaur', number: 1},
-    {name: 'Chamander', number: 4},
-    {name: 'Squirtle', number: 7},
-    {name: 'Pikachu', number: 25},
-  ]
+  private url = '//pokeapi.co/api/v2/';
 
-  constructor() { }
+  pokeList = [];
 
+  constructor(private http: HttpClient) { }
+
+  listAll() {
+    return this.http.get<PokelistResponse>(`${this.url}pokemon`)
+      .subscribe(response => {
+        response.results.forEach(pokemon => {
+          pokemon.number = this.getNumberFromUrl(pokemon.url);
+        });
+        this.pokeList = this.sortPokemon(response.results).filter(pokemon => pokemon.number < 1000);
+      })
+  }
+
+  private getNumberFromUrl(url) {
+    return parseInt(url.replace(/.*\/(\d+)\/$/,'$1'));
+  }
+
+  private sortPokemon(pokemonList) {
+    return pokemonList.sort((a, b) => {
+      return (a.number > b.number) ? 1 : -1;
+    })
+  }
   getPokeList() {
     return this.pokeList;
   }
-
 }
