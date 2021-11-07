@@ -2,8 +2,8 @@
 <img [src]="pkmSprite" width="10%" height="25%" class="selected-pkm" *ngIf="selectedPkm != null">
 
 <ul class="poke-list" >
-  <li class="poke-list-item" *ngFor="let pokemon of pokemonList" (mouseenter)="selectPkm(pokemon)" >
-    <img src="//serebii.net/pokedex-xy/icon/{{ pokemon.number | number: '3.0-0' }}.png" >
-    <span>{{ pokemon.number | number:'3.0-0' }} - {{ pokemon.name }}</span>
-  </li>
+  <app-list-item class="poke-list-item" *ngFor="let pokemon of pokemonList"
+                 [pokemon]="pokemon" (mouseenter)="selectPkm(pokemon)"
+                 [urlImagem]="urlImagemPokemom">
+  </app-list-item>
 </ul>

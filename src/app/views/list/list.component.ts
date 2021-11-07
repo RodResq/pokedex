@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
 
   searchFilter: string = '';
   selectedPkm: null;
+  urlImagemPokemom: string =  '//serebii.net/pokedex-xy/icon/';
 
   constructor(private pokeapi: PokeapiService) { }
 
