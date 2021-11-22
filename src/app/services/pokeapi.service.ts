@@ -26,7 +26,7 @@ export class PokeapiService {
   constructor(private http: HttpClient) { }
 
   listAll() {
-    return this.http.get<PokelistResponse>(`${this.url}pokemon`)
+    return this.http.get<PokelistResponse>(`${this.url}pokemon?limit=1118`)
       .subscribe(response => {
         response.results.forEach(pokemon => {
           pokemon.number = this.getNumberFromUrl(pokemon.url);
