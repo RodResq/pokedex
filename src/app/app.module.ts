@@ -8,13 +8,15 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { RollOnScrollDirective } from './directives/roll-on-scroll.directive';
+import { MyNumberPipe } from './pipes/my-namber.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ListItemComponent,
-    RollOnScrollDirective
+    RollOnScrollDirective,
+    MyNumberPipe
   ],
   imports: [
     BrowserModule,
