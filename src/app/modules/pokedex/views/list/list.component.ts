@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PokeapiService} from '../../services/pokeapi.service';
-import {HttpClient} from '@angular/common/http';
+import { PokeapiService } from './../../../../services/pokeapi.service';
 
 @Component({
   selector: 'app-list',

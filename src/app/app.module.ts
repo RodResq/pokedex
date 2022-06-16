@@ -1,27 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { PokedexModule } from './modules/pokedex/pokedex.module';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './views/list/list.component';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import { ListItemComponent } from './components/list-item/list-item.component';
 import { RollOnScrollDirective } from './directives/roll-on-scroll.directive';
-import { MyNumberPipe } from './pipes/my-namber.pipe';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
-    ListItemComponent,
-    RollOnScrollDirective,
-    MyNumberPipe
+    RollOnScrollDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    PokedexModule,
     AppRoutingModule
   ],
   providers: [],
