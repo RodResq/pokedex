@@ -1,4 +1,7 @@
-<li>
-  <img src="{{urlImagem}}{{ pokemon.number | number: '3.0-0' }}.png" >
-  <span>{{ pokemon.number | myNumber }} - {{ pokemon.name }}</span>
+
+<li class="poke-lit-item">
+  <a routerLink="./{{pokemon.number}}">
+    <img src="{{urlImagem}}{{ pokemon.number | number: '3.0-0' }}.png" >
+    <span>{{ pokemon.number | myNumber }} - {{ pokemon.name }}</span>
+  </a>
 </li>

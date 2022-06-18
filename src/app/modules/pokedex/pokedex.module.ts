@@ -5,6 +5,7 @@ import { MyNumberPipe } from './../../pipes/my-namber.pipe';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { PokedexRoutingModule } from './pokedex-routing.module';
 import { ListComponent } from './views/list/list.component';
+import { InformationComponent } from './views/information/information.component';
 
 
 
@@ -16,7 +17,8 @@ const CompList = [
 @NgModule({
   declarations: [
     ...CompList,
-    MyNumberPipe
+    MyNumberPipe,
+    InformationComponent
   ],
   imports: [
     CommonModule,

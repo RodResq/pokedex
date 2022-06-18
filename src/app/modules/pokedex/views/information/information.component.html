@@ -1,0 +1,29 @@
+<a [routerLink]="['/']" > < </a>
+
+<div class="poke-profile">
+    <div>{{ pokeNumber | myNumber }} - {{ pokemon.name }}</div>
+    <img class="poker-sprite" src="//serebii.net/sunmoon/pokemon/{{pokeNumber | myNumber }}.png">
+</div>
+
+<div class="poke-types">
+    <li *ngFor="let type of pokemon.types">
+        <img src="//serebii.net/pokedex-bw/type/{{type.name}}.gif" />
+    </li>
+</div>
+
+<table class="stats">
+    <tr>
+        <td>Attack</td>
+        <td>Defense</td>
+        <td>Sp Atk</td>
+        <td>Sp Def</td>
+        <td>Speed</td>
+    </tr>
+    <tr>
+        <td>{{pokemon.abilities.length}}</td>
+        <td>{{pokemon}}</td>
+        <td>{{pokemon}}</td>
+        <td>{{pokemon}}</td>
+        <td>{{pokemon}}</td>
+    </tr>
+</table>
