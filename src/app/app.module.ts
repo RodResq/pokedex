@@ -17,7 +17,6 @@ import { RollOnScrollDirective } from './directives/roll-on-scroll.directive';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    PokedexModule,
     AppRoutingModule
   ],
   providers: [],
