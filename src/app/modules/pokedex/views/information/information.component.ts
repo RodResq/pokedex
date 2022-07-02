@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PokeapiService } from 'src/app/services/pokeapi.service';
+import { PokeapiService } from 'pokedata';
 import {filter, map, takeWhile} from 'rxjs/operators';
 
 @Component({

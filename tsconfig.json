@@ -12,6 +12,12 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/pokedata/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/pokedata/tsconfig.spec.json"
     }
 ]
 }
